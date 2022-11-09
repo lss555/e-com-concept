@@ -6,3 +6,7 @@ export const HomeContainer = styled.div`
 	flex-direction: column;
 	text-align: center;
 `;
+
+export const BestSellerContainer = styled.div`
+	margin-top: 8rem;
+`;
