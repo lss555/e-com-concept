@@ -1,20 +1,22 @@
 import React from 'react';
 import { HeroBannerContainer, TextContainer, SmallHeroText, MidHeroText, HeroImg, HeroLink, HeroButton, HeroDesc, HeroDescHeader } from './hero-banner-styles.js';
+import { urlFor } from '../../lib/client';
 
-const HeroBanner = () => {
+const HeroBanner = ({ heroBanner }) => {
 
 	return (
 		<HeroBannerContainer>
 			<TextContainer>
-				<SmallHeroText>small hero text</SmallHeroText>
-				<MidHeroText>mid hero text</MidHeroText>
+				<SmallHeroText>{heroBanner.smallText}</SmallHeroText>
+				<MidHeroText>{heroBanner.midText}</MidHeroText>
+				<h1>{heroBanner.largeText1}</h1>
 			</TextContainer>
-			<HeroLink href='/product/ID'>
-				<HeroButton>Button Text</HeroButton>
+			<HeroLink href={`/product/${heroBanner.product}`}>
+				<HeroButton>{heroBanner.buttonText}</HeroButton>
 			</HeroLink>
-			<HeroDesc>description</HeroDesc>
 			<HeroDescHeader>description</HeroDescHeader>
-			<HeroImg />
+			<HeroDesc>{heroBanner.desc}</HeroDesc>
+			<HeroImg src={urlFor(heroBanner.image)}/>
 		</HeroBannerContainer>
 		)
 }

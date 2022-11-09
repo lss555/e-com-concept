@@ -1,25 +1,37 @@
 import React from 'react';
 import { HomeContainer } from './styles-index.js';
 import { Cart, Footer, FooterBanner, HeroBanner, Layout, NavBar, Product } from '../components';
+import { client } from '../lib/client';
 
-const index = () => {
+const index = ({ products, bannerData }) => {
 
   return (
     <HomeContainer>
-      <HeroBanner />
+      <HeroBanner heroBanner={bannerData.length && bannerData[0]}/>
 
       <div>
         <h2>Best Selling Products</h2>
-        <p>Speakers of many variations</p>
+        <p>Stuff of many variations</p>
       </div>
 
       <div>
-        {['Product 1', 'Product 2'].map((product) => product)}
+        {products?.map((product) => product.name)}
       </div>
 
       <FooterBanner />
     </HomeContainer>
-    )
+    );
+}
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "product"]';
+  const products = await client.fetch(query);
+  const bannerQuery = '*[_type == "banner"]';
+  const bannerData = await client.fetch(bannerQuery);
+
+  return {
+    props: { products, bannerData}
+  }
 }
 
 export default index;

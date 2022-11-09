@@ -18,7 +18,9 @@ export const MidHeroText = styled.h3`
 `;
 
 export const HeroImg = styled.img`
-	
+	width: 100%;
+	height: 40vh;
+	object-fit: cover;
 `;
 
 export const HeroLink = styled(Link)`
