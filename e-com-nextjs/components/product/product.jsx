@@ -1,9 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { ProductContainer, ProductLink, ProductCard, ProductCardImage, ProductPrice, ProductName } from './product-styles.js';
+import { urlFor } from '../../lib/client';
 
-const Product = () => {
+
+const Product = ({ product: { image, name, slug, price } }) => {
 
 	return (
-		<div>Product</div>
+		<ProductContainer>
+			<ProductLink href={`/product/${slug.current}`}>
+				<ProductCard>
+					<ProductCardImage src={urlFor(image && image[0])} width={250} height={250} />
+					<ProductName>{name}</ProductName>
+					<ProductPrice>${price} USD</ProductPrice>
+				</ProductCard>
+			</ProductLink>
+		</ProductContainer>
 		)
 }
 

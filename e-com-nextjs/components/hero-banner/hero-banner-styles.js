@@ -15,10 +15,10 @@ export const TextContainer = styled.div`
 	align-items: flex-start;
 	color: red;
 	flex-direction: column;
-	margin-top: 10vh;
+	margin-top: 40vh;
 	margin-left: 2rem;
 	background-color: rgba(128, 128, 128, 0.2);
-	padding: .4rem;
+	padding: 0 .4rem .4rem .4rem;
 	border-radius: 5px;
 	
 `;
@@ -84,13 +84,14 @@ export const HeroDesc = styled.p`
 	margin: 1rem 1rem 0 1rem;
 	width: 50%;
 	padding: 0;
+	color: white;
 `;
 
 export const DescContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	background-color: rgba(128, 128, 128, 0.2);
-	padding: .4rem 0 .4rem 0;
+	background-color: rgba(128, 128, 128, 0.5);
+	padding: .4rem 0 1rem 0;
 	border-radius: 5px;
 	align-items: center;
 	justify-content: flex-end;
@@ -100,6 +101,7 @@ export const DescContainer = styled.div`
 	margin-left: auto;
 	width: 20%;
 	color: #f12307;
+	display: none;
 `;
 
 export const HeroButtonContainer = styled.div`

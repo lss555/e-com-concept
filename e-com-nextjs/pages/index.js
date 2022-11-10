@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeContainer, BestSellerContainer } from './styles-index.js';
+import { HomeContainer, BestSellerContainer, ProductContainer } from './styles-index.js';
 import { Cart, Footer, FooterBanner, HeroBanner, Layout, NavBar, Product } from '../components';
 import { client } from '../lib/client';
 
@@ -14,9 +14,9 @@ const index = ({ products, bannerData }) => {
           <p>Stuff of many variations</p>
         </div>
 
-        <div>
-          {products?.map((product) => product.name)}
-        </div>
+        <ProductContainer>
+          {products?.map((product) => <Product key={product._id} product={product}/>)}
+        </ProductContainer>
       </BestSellerContainer>
       <FooterBanner />
     </HomeContainer>
