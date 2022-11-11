@@ -27,7 +27,7 @@ export const PopularHeader = styled.h2`
 	border-bottom: 2px solid #313639;
 	padding-bottom: 3px;
 	width: 10%;
-	margin: auto auto 3rem auto;
+	margin: auto auto 1.5rem auto;
 `;
 
 export const HeaderContainer = styled.div`

@@ -6,11 +6,19 @@ import SouthIcon from '@mui/icons-material/South';
 
 const HeroBanner = ({ heroBanner, products }) => {
 	const [time, setTime] = useState(new Date().toLocaleTimeString());
-	// let time = new Date().getTime();
-
+	const [londonTime, setLondonTime] = useState(new Date().toLocaleTimeString("en-US", { timeZone: "Europe/London"}))
+	
+	// Time now
 	useEffect(() => {
 		let secTimer = setInterval(() => {
 			setTime(new Date().toLocaleTimeString())
+		}, 1000)
+		return () => clearInterval(secTimer);
+	}, []);
+	// London Time
+	useEffect(() => {
+		let secTimer = setInterval(() => {
+			setLondonTime(new Date().toLocaleTimeString("en-US", { timeZone: "Europe/London" }))
 		}, 1000)
 		return () => clearInterval(secTimer);
 	}, []);
@@ -42,15 +50,15 @@ if (!products || !heroBanner) {
 				<Marquee gradient={false} speed={120}>
 					<ArrowIconContainer><SouthIcon /></ArrowIconContainer>
 					<MarqueeText>{products[0].name}</MarqueeText>
-					<MarqueeText>{products[1].name}</MarqueeText>
-					<MarqueeText>{products[2].name}</MarqueeText>
-					<ArrowIconContainer><SouthIcon /></ArrowIconContainer>
 					<MarqueeText>{time}</MarqueeText>
+					<MarqueeText>{products[1].name}</MarqueeText>
+					<ArrowIconContainer><SouthIcon /></ArrowIconContainer>
+					<MarqueeText>{products[2].name}</MarqueeText>
 					<MarqueeText>{products[3].name}</MarqueeText>
 					<ArrowIconContainer><SouthIcon /></ArrowIconContainer>
 					<MarqueeText>{products[4].name}</MarqueeText>
 					<MarqueeText>{products[5].name}</MarqueeText>
-					
+					<MarqueeText>{londonTime} GMT</MarqueeText>
 					<MarqueeText>{products[0].name}</MarqueeText>
 				</Marquee>
 			</MarqueeContainer>

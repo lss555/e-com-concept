@@ -19,11 +19,9 @@ export const ProductLink = styled(Link)`
 export const ProductCard = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin: 0;
+	margin-top: 20px;
 	flex-wrap: wrap;
-	margin: 10px;
 	background-color: #313639;
-	flex: 1;
 	border: 2px solid #313639;
 	justify-content: space-evenly;
 	:hover {

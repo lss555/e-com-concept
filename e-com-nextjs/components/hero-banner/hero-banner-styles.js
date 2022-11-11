@@ -48,9 +48,19 @@ export const HeroImg = styled.img`
 `;
 
 export const HeroLink = styled(Link)`
+	display: flex;
+	width: 100%;
 	position: absolute;
 	margin-right: 48%;
 	margin-left: 48%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	@media screen and (max-width: 812px) {
+    padding: auto;
+    margin: auto;
+    align-self: center;
+  }
 `;
 
 export const HeroButton = styled.button`
@@ -59,7 +69,10 @@ export const HeroButton = styled.button`
 	align-items: center;
 	text-align: center;
 	border: 2px solid #f12307;
-	margin-top: 30vh;
+	margin-top: 28vh;
+	margin-right: auto;
+	
+	margin-bottom: auto;
 	background-color: black;
 	height: 40px;
 	width: 100px;
@@ -71,6 +84,9 @@ export const HeroButton = styled.button`
 		transition: all .7s ease;
 		transform: scale(1.1);
 	}
+	@media screen and (max-width: 812px) {
+    margin: auto;
+  }
 `;
 
 export const HeroDescHeader = styled.h5`
@@ -105,6 +121,10 @@ export const DescContainer = styled.div`
 `;
 
 export const HeroButtonContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 	margin-right: auto;
 	margin-left: auto;
 	height: 100%;
