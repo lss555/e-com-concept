@@ -8,7 +8,7 @@ export const ProductContainer = styled.div`
 	overflow: wrap;
 	width: auto;
 	margin: auto;
-	max-width: 1800px;
+
 `;
 
 export const ProductLink = styled(Link)`
@@ -24,11 +24,12 @@ export const ProductCard = styled.div`
 	margin: 10px;
 	background-color: #313639;
 	flex: 1;
-	border: 2px solid #f12307;
+	border: 2px solid #313639;
 	justify-content: space-evenly;
 	:hover {
 		transition: all .7s ease;
 		transform: scale(1.1);
+		border: 2px solid #f12307;
 	}
 `;
 

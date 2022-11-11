@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { FooterContainer, LogoImage } from './footer-banner-styles.js';
+import { urlFor } from '../../lib/client';
+import Logo from '../../assets/785-logo.png';
 
-const FooterBanner = () => {
+const FooterBanner = ({ footerBanner }) => {
 
 	return (
-		<h2>Footer Banner</h2>
-		)
+		<FooterContainer>
+			footer bottom
+		</FooterContainer>
+		);
 }
 
 export default FooterBanner

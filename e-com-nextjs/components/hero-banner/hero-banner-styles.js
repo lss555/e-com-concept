@@ -111,3 +111,29 @@ export const HeroButtonContainer = styled.div`
 	width: 100%;
 	
 `;
+
+export const MarqueeContainer = styled.div`
+	display: flex;
+	height: 50px;
+	width: 100%;
+	margin-top: 60vh;
+	background-color: #f12307;
+	color: black;
+	position: absolute;
+	:hover {
+		cursor: pointer;
+	}
+`;
+
+export const MarqueeText = styled.h3`
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+	letter-spacing: .6px;
+	font-weight: bold;
+`;
+
+export const ArrowIconContainer = styled.div`
+	
+	
+	
+`;

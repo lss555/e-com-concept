@@ -1,8 +1,23 @@
-import React from 'react';
-import { HeroBannerContainer, TextContainer, SmallHeroText, MidHeroText, HeroImg, HeroLink, HeroButton, HeroDesc, HeroDescHeader, DescContainer, HeroButtonContainer } from './hero-banner-styles.js';
+import React, { useEffect, useState } from 'react';
+import { HeroBannerContainer, TextContainer, SmallHeroText, MidHeroText, HeroImg, HeroLink, HeroButton, HeroDesc, HeroDescHeader, DescContainer, HeroButtonContainer, MarqueeContainer, MarqueeText, ArrowIconContainer } from './hero-banner-styles.js';
 import { urlFor } from '../../lib/client';
+import Marquee from "react-fast-marquee";
+import SouthIcon from '@mui/icons-material/South';
 
-const HeroBanner = ({ heroBanner }) => {
+const HeroBanner = ({ heroBanner, products }) => {
+	const [time, setTime] = useState(new Date().toLocaleTimeString());
+	// let time = new Date().getTime();
+
+	useEffect(() => {
+		let secTimer = setInterval(() => {
+			setTime(new Date().toLocaleTimeString())
+		}, 1000)
+		return () => clearInterval(secTimer);
+	}, []);
+
+if (!products || !heroBanner) {
+	return <div>loading...</div>;
+}
 
 	return (
 		<HeroBannerContainer>
@@ -23,6 +38,22 @@ const HeroBanner = ({ heroBanner }) => {
 					<HeroButton>{heroBanner.buttonText}</HeroButton>
 				</HeroButtonContainer>
 			</HeroLink>
+			<MarqueeContainer>
+				<Marquee gradient={false} speed={120}>
+					<ArrowIconContainer><SouthIcon /></ArrowIconContainer>
+					<MarqueeText>{products[0].name}</MarqueeText>
+					<MarqueeText>{products[1].name}</MarqueeText>
+					<MarqueeText>{products[2].name}</MarqueeText>
+					<ArrowIconContainer><SouthIcon /></ArrowIconContainer>
+					<MarqueeText>{time}</MarqueeText>
+					<MarqueeText>{products[3].name}</MarqueeText>
+					<ArrowIconContainer><SouthIcon /></ArrowIconContainer>
+					<MarqueeText>{products[4].name}</MarqueeText>
+					<MarqueeText>{products[5].name}</MarqueeText>
+					
+					<MarqueeText>{products[0].name}</MarqueeText>
+				</Marquee>
+			</MarqueeContainer>
 		</HeroBannerContainer>
 		)
 }
