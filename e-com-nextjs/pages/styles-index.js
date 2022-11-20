@@ -26,8 +26,12 @@ export const PopularHeader = styled.h2`
 	font-size: 2.5rem;
 	border-bottom: 2px solid #313639;
 	padding-bottom: 3px;
-	width: 10%;
+	width: 20%;
 	margin: auto auto 1.5rem auto;
+	@media screen and (max-width: 900px) {
+    margin-top: 2rem;
+    width: 80%;
+  }
 `;
 
 export const HeaderContainer = styled.div`

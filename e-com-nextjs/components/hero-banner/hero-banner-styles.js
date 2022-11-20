@@ -20,7 +20,11 @@ export const TextContainer = styled.div`
 	background-color: rgba(128, 128, 128, 0.2);
 	padding: 0 .4rem .4rem .4rem;
 	border-radius: 5px;
-	
+	@media screen and (max-width: 900px) {
+    margin-top: 35vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const SmallHeroText = styled.p`
@@ -56,7 +60,7 @@ export const HeroLink = styled(Link)`
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	@media screen and (max-width: 812px) {
+	@media screen and (max-width: 900px) {
     padding: auto;
     margin: auto;
     align-self: center;
@@ -84,7 +88,7 @@ export const HeroButton = styled.button`
 		transition: all .7s ease;
 		transform: scale(1.1);
 	}
-	@media screen and (max-width: 812px) {
+	@media screen and (max-width: 900px) {
     margin: auto;
   }
 `;
