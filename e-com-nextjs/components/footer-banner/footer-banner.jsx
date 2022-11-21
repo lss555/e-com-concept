@@ -1,13 +1,19 @@
 import React from 'react';
-import { FooterBannerContainer, LogoImage } from './footer-banner-styles.js';
+import { FooterBannerContainer, LogoImage, FooterBannerCard, FooterBannerName, TextContainer } from './footer-banner-styles.js';
 import { urlFor } from '../../lib/client';
-import Logo from '../../assets/785-logo.png';
+
+// <LogoImage src={urlFor(image && image[0])} width={250} height={250} />
 
 const FooterBanner = ({ footerBanner }) => {
 
 	return (
 		<FooterBannerContainer>
-			footer banner
+			<FooterBannerCard>
+				<TextContainer>
+					<FooterBannerName>{footerBanner.title}</FooterBannerName>
+				</TextContainer>
+				<LogoImage src={urlFor(footerBanner.image && footerBanner.image[0])} width={250} height={250} />
+			</FooterBannerCard>
 		</FooterBannerContainer>
 		);
 }

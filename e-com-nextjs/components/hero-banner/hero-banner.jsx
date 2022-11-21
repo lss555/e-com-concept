@@ -8,20 +8,21 @@ const HeroBanner = ({ heroBanner, products }) => {
 	const [time, setTime] = useState(new Date().toLocaleTimeString());
 	const [londonTime, setLondonTime] = useState(new Date().toLocaleTimeString("en-US", { timeZone: "Europe/London"}))
 	
-	// Time now
+	// Use Effect to get time now for marquee
 	useEffect(() => {
 		let secTimer = setInterval(() => {
 			setTime(new Date().toLocaleTimeString())
 		}, 1000)
 		return () => clearInterval(secTimer);
 	}, []);
-	// London Time
+	// Use Effect to get London time for marquee
 	useEffect(() => {
 		let secTimer = setInterval(() => {
 			setLondonTime(new Date().toLocaleTimeString("en-US", { timeZone: "Europe/London" }))
 		}, 1000)
 		return () => clearInterval(secTimer);
 	}, []);
+
 
 if (!products || !heroBanner) {
 	return <div>loading...</div>;

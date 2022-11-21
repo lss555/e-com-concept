@@ -3,7 +3,7 @@ import { HomeContainer, BestSellerContainer, ProductContainer, PopularHeader, He
 import { Cart, Footer, FooterBanner, HeroBanner, Layout, NavBar, Product } from '../components';
 import { client } from '../lib/client';
 
-const index = ({ products, bannerData }) => {
+const index = ({ products, bannerData, footerBannerData }) => {
 
   return (
     <HomeContainer>
@@ -17,7 +17,8 @@ const index = ({ products, bannerData }) => {
           {products?.map((product) => <Product key={product._id} product={product}/>)}
         </ProductContainer>
       </BestSellerContainer>
-      <FooterBanner footerBanner={bannerData && bannerData[0]} />
+      {footerBannerData?.map((footerBannerData) => <FooterBanner key={footerBannerData._id} footerBanner={footerBannerData} />)}
+      
     </HomeContainer>
     );
 }
@@ -27,9 +28,11 @@ export const getServerSideProps = async () => {
   const products = await client.fetch(query);
   const bannerQuery = '*[_type == "banner"]';
   const bannerData = await client.fetch(bannerQuery);
+  const footerBannerQuery = '*[_type == "category" && highlight]';
+  const footerBannerData = await client.fetch(footerBannerQuery);
 
   return {
-    props: { products, bannerData }
+    props: { products, bannerData, footerBannerData }
   }
 }
 
