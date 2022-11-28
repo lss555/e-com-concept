@@ -6,7 +6,7 @@ export const NavBarContainer = styled.div`
 	color: #f12307;
 	height: 50px;
 	width: 100%;
-	display: relative;
+	position: absolute;
 `;
 
 export const NavBarLogoContainer = styled.p`
@@ -32,5 +32,11 @@ export const NavBarCartIconButton = styled.div`
 `;
 
 export const CartIconItemQty = styled.span`
+	display: flex;
+	justify-content: center;
 	font-size: 1rem;
+	border-radius: 50%;
+	background-color: #313639;
+	height: 1.3rem;
+	width: 1.3rem;
 `;
