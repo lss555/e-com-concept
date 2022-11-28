@@ -1,9 +1,25 @@
 import React from 'react'
+import Head from 'next/head'
+import NavBar from '../navbar/navbar.jsx'
+import Footer from '../footer/footer.jsx'
 
-const Layout = () => {
+const Layout = ({ children }) => {
 
 	return (
-		<div>Layout</div>
+		<div>
+			<Head>
+				<title>785 Clothing</title>
+			</Head>
+			<header>
+				<NavBar />
+			</header>
+			<main>
+				{children}
+			</main>
+			<footer>
+				<Footer />
+			</footer>
+		</div>
 		)
 }
 
