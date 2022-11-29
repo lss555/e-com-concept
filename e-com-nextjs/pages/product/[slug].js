@@ -1,6 +1,7 @@
 import React from 'react'
-import { SlugContainer, ProductDetailContainer, ProductImageContainer, ProductImage, ProductsImageCarousel, SmallCarouselImage, ProductDetailsDescription, ProductName } from './slug-styles.js'
+import { SlugContainer, ProductDetailContainer, ProductImageContainer, ProductImage, ProductsImageCarousel, SmallCarouselImage, ProductDetailsDescription, ProductName, ProductPrice, AddRemoveFromCartContainer, AmountInCart, AddToCart, RemoveFromCart, AddToCartButton } from './slug-styles.js'
 import { client, urlFor } from '../../lib/client'
+import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 
 // small image carousel
 // <ProductsImageCarousel>
@@ -20,7 +21,16 @@ const ProductDetails = ({ product, products }) => {
 			</ProductImageContainer>
 			<ProductDetailsDescription>
 				<ProductName>{name}</ProductName>
+				<ProductDetailsDescription>{details}</ProductDetailsDescription>
+				<ProductPrice>${price}</ProductPrice>
+				<AddRemoveFromCartContainer>
+					<AddToCart><AiOutlineMinus /></AddToCart>
+					<AmountInCart>0</AmountInCart>
+					<RemoveFromCart><AiOutlinePlus /></RemoveFromCart>
+				</AddRemoveFromCartContainer>
+				<AddToCartButton>Add To Cart</AddToCartButton>
 			</ProductDetailsDescription>
+
 		</SlugContainer>
 		);
 }
